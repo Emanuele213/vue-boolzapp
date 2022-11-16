@@ -46,6 +46,7 @@ ul {
     width: 35%;
     height: 100%;
     border-right: 1px solid lightgray;
+    background-color:#FAFAFA;
 }
 
 .user-profile {
@@ -99,4 +100,32 @@ ul {
     text-decoration: underline;
     color: darkslategray;
     font-size: .8rem;
+}
+
+.search {
+    padding: 0.2rem;
+    display: flex;
+    text-align: center;
+}
+
+.mod-search {
+    width: 15%;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    color: lightgrey;
+    font-size: 1.2rem;
+    padding: .2rem;
+}
+
+.search input {
+    width: 85%;
+    border: 0;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.top-border {
+    border-top: 2px solid lightgrey;
+}
+
+.top-border:hover {
+    background-color: #E9EBEB;
 }
