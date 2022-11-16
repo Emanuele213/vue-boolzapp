@@ -40,13 +40,14 @@ ul {
     width: 80%;
     height: 95%;
     background-color: #FFFFFF;
+    display: flex;
 }
 
 .message-people {
     width: 35%;
     height: 100%;
     border-right: 1px solid lightgray;
-    background-color:#FAFAFA;
+    background-color:#F3EEEA;
 }
 
 .user-profile {
@@ -54,6 +55,7 @@ ul {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem;
+    height: 70px;
 }
 
 .img-container-profile {
@@ -62,8 +64,8 @@ ul {
 }
 
 .img-profile {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     margin-right: 5px;
 }
@@ -128,4 +130,42 @@ ul {
 
 .top-border:hover {
     background-color: #E9EBEB;
+}
+
+.header-message-bar {
+    background-color: #F3EEEA;
+    width: 65%;
+}
+
+.name-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-message-bar {
+    background-image: url(../img/mine.jpg);
+    height: 790px;
+    position: relative;
+}
+
+.footer-message-bar {
+    background-color: #F3EEEA;
+    padding: 1rem;
+    width: 100%;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    color: lightgray;
+}
+
+.footer-message-bar input {
+    background-color: white;
+    width: 75%;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 1rem;
+    padding: .5rem .2rem;
 }
