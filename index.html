@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- my-style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-background-container" id="app">
+        <!-- colore di sfondo verde -->
+        <div class="background-green"></div>
+        <!-- colore di sfondo griggio chiaro -->
+        <div class="background-lightGrey"></div>
+        <!-- finestra di messaggi -->
+        <div class="window-message">
+            <div class="message-people">
+                <ul>
+                    <li class="user-profile">
+                        <div class="img-container-profile ">
+                            <img src="img/avatar_2.jpg" alt="foto profilo" class="img-profile">
+                            <span>Emanuele</span>
+                        </div>
+                        <div class="user-controls">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </li>
+                </ul>
+                <div class="blue-notifications">
+                    <i class="fa-solid fa-bell-slash mod-bell"></i>
+                    <div class="notification-text">
+                        <div>Ricevi notifiche di nuovi messaggi</div>
+                        <div class="text-underline">Attiva notifiche desktop</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+    <!-- my-js -->
+    <script src="js/script.js"></script>
+</body>
+</html>
