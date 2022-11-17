@@ -143,7 +143,11 @@ ul {
     background-color: #E9EBEB;
 }
 
-.visible {
+.onContact {
+    display: none;
+}
+
+.inContact {
     display: flex;
 }
 

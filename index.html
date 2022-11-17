@@ -51,7 +51,7 @@
                     <li v-for="(contact, i) in contacts"
                     :key="contact.name"
                     class="user-profile top-border"
-                    :class="{visible: contact.visible}" 
+                    :class="contact.visible === false ? 'onContact' : 'inContact'"
                     @click="selectedContact(i)"
                     >
                         <div class="img-container-profile">
