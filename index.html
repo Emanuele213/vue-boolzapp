@@ -74,7 +74,7 @@
                         <img :src="contacts[contactOver].avatar" :alt="contacts[contactOver].name" class="img-profile">
                         <div class="name-profile">
                             <div>{{ contacts[contactOver].name }}</div>
-                            <div>Ultimo accesso oggi alle </div>
+                            <div>Ultimo accesso oggi alle {{ contacts[contactOver].messages[contacts[contactOver].messages.length - 1].date }}</div>
                         </div>
                     </div>
                     <div class="user-controls">
@@ -85,7 +85,7 @@
                 </li>
                 <div class="main-message-bar">
                     <div v-for="mex in contacts[contactOver].messages">
-                        <ul :class="{messageArrived: mex.status === 'sent', messageSent: mex.status === 'received'}">
+                        <ul :class="{messageSent: mex.status === 'sent', messageArrived: mex.status === 'received'}">
                             <li class="auto-mex">{{ mex.message }}</li>
                         </ul>
                     </div>

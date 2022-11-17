@@ -9,6 +9,10 @@ ul {
     list-style: none;
 }
 
+i:hover {
+    color: #FFFFFF;
+}
+
     /* background */
 
 .main-background-container {
@@ -194,7 +198,7 @@ ul {
     background-color: #d5f9ba;
     width: fit-content;
     max-width: 80%;
-    margin: 0 1rem 0 auto;
+    margin: 0 3rem 1rem auto;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -207,7 +211,7 @@ ul {
     width: fit-content;
     position: relative;
     max-width: 80%;
-    margin:auto 0 1rem;
+    margin: auto 0 0rem 3rem;
     display: flex;
     flex-direction: column;
 }
