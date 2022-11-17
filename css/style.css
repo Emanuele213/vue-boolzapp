@@ -193,7 +193,7 @@ i:hover {
 
 .messageSent{
     border-radius: 1rem;
-    padding: .5rem;
+    padding: .8rem 1rem;
     background-color: #d5f9ba;
     width: fit-content;
     max-width: 80%;
@@ -204,7 +204,7 @@ i:hover {
 }
 
 .messageArrived {
-    padding: .5rem;
+    padding: .8rem 1rem;
     border-radius: 1rem;
     background-color: white;
     width: fit-content;
