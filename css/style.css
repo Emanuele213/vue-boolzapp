@@ -50,12 +50,16 @@ ul {
     background-color:#F3EEEA;
 }
 
+    /* profilo utente  */
+
 .user-profile {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid lightgray;
     padding: 0.5rem;
     height: 70px;
+    width: 100%;
 }
 
 .img-container-profile {
@@ -75,6 +79,8 @@ ul {
     font-size: 1.5rem;
     margin: 0 .6rem;
 }
+
+    /* notifica desktop */
 
 .blue-notifications {
     margin-top: .5rem;
@@ -104,6 +110,8 @@ ul {
     font-size: .8rem;
 }
 
+    /* trova contatti */
+
 .search {
     padding: 0.2rem;
     display: flex;
@@ -124,13 +132,36 @@ ul {
     box-shadow: 2px 2px 2px 2px lightgrey;
 }
 
+    /* contatti */
+
 .top-border {
     border-top: 2px solid lightgrey;
+    cursor: pointer;
 }
 
 .top-border:hover {
     background-color: #E9EBEB;
 }
+
+.visible {
+    display: flex;
+}
+
+.flex-contact {
+    display: flex;
+    gap: 4rem;
+}
+
+.time-message {
+
+}
+
+.last-message {
+    font-size: .9rem;
+    color:darkslategray;
+}
+
+    /* chat bar */
 
 .header-message-bar {
     background-color: #F3EEEA;
@@ -147,6 +178,34 @@ ul {
     background-image: url(../img/mine.jpg);
     height: 790px;
     position: relative;
+}
+
+.auto-mex {
+    margin: .2rem;
+}
+
+.messageSent{
+    border-radius: 1rem;
+    padding: .5rem;
+    background-color: #d5f9ba;
+    width: fit-content;
+    max-width: 80%;
+    margin: 0 1rem 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.messageArrived {
+    padding: .5rem;
+    border-radius: 1rem;
+    background-color: white;
+    width: fit-content;
+    position: relative;
+    max-width: 80%;
+    margin:auto 0 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-message-bar {

@@ -44,29 +44,37 @@
                 <!-- trova contatti -->
                 <div class="search">
                     <i class="fa-solid fa-magnifying-glass mod-search"></i>
-                    <input type="text" name="profile" id="profile" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" v-model="seachPeople" @keyup="searchContact()" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- contatti -->
                 <ul>
                     <li v-for="(contact, i) in contacts"
                     :key="contact.name"
                     class="user-profile top-border"
+                    :class="{visible: contact.visible}" 
+                    @click="selectedContact(i)"
                     >
-                        <div class="img-container-profile ">
-                            <img :src="'img/avatar'+contact.avatar+'.jpg'" :alt="contact.name" class="img-profile">
-                            <span>{{ contact.name }}</span>
+                        <div class="img-container-profile">
+                            <img :src="contact.avatar" :alt="contact.name" class="img-profile">
+                            <div>
+                                <div class="flex-contact">
+                                    <div>{{ contact.name }}</div>
+                                    <div class="time-message">{{ contact.messages[contact.messages.length - 1].date }}</div>
+                                </div>
+                                <div class="last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <!-- contatto -->
+            <!-- chat bar -->
             <div class="header-message-bar">
                 <li class="user-profile">
                     <div class="img-container-profile ">
-                        <img src="img/avatar_2.jpg" alt="foto profilo" class="img-profile">
+                        <img :src="contacts[contactOver].avatar" :alt="contacts[contactOver].name" class="img-profile">
                         <div class="name-profile">
-                            <div>Nome</div>
-                            <div>Ultimo accesso oggi alle 12:00</div>
+                            <div>{{ contacts[contactOver].name }}</div>
+                            <div>Ultimo accesso oggi alle </div>
                         </div>
                     </div>
                     <div class="user-controls">
@@ -76,10 +84,20 @@
                     </div>
                 </li>
                 <div class="main-message-bar">
+                    <div v-for="mex in contacts[contactOver].messages">
+                        <ul :class="{messageArrived: mex.status === 'sent', messageSent: mex.status === 'received'}">
+                            <li class="auto-mex">{{ mex.message }}</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="footer-message-bar">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" name="profile" id="profile" placeholder="Scrivi un messaggio">
+                    <!-- area chat -->
+                    <input type="text"
+                     v-model="mexBar" 
+                     @keyup.enter="sendMexBar()" 
+                     placeholder="Scrivi un messaggio">
+                    <!-- --------------------------- -->
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>

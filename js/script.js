@@ -1,10 +1,13 @@
 new Vue({
     el: '#app',
     data: {
+        contactOver: 0,
+        mexBar: '',
+        seachPeople: '',
         contacts: [
             {
                 name: 'Michele',
-                avatar: '_1',
+                avatar: 'img/avatar_1.jpg',
                 visible: true,
                 messages: [
                     {
@@ -26,7 +29,7 @@ new Vue({
             },
             {
                 name: 'Fabio',
-                avatar: '_2',
+                avatar: 'img/avatar_2.jpg',
                 visible: true,
                 messages: [
                     {
@@ -48,7 +51,7 @@ new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: 'img/avatar_3.jpg',
                 visible: true,
                 messages: [
                     {
@@ -70,7 +73,7 @@ new Vue({
             },
             {
                 name: 'Alessandro B.',
-                avatar: '_4',
+                avatar: 'img/avatar_4.jpg',
                 visible: true,
                 messages: [
                     {
@@ -87,7 +90,7 @@ new Vue({
             },
             {
                 name: 'Alessandro L.',
-                avatar: '_5',
+                avatar: 'img/avatar_5.jpg',
                 visible: true,
                 messages: [
                     {
@@ -104,7 +107,7 @@ new Vue({
             },
             {
                 name: 'Claudia',
-                avatar: '_6',
+                avatar: 'img/avatar_6.jpg',
                 visible: true,
                 messages: [
                     {
@@ -126,7 +129,7 @@ new Vue({
             },
             {
                 name: 'Federico',
-                avatar: '_7',
+                avatar: 'img/avatar_7.jpg',
                 visible: true,
                 messages: [
                     {
@@ -143,7 +146,7 @@ new Vue({
             },
             {
                 name: 'Davide',
-                avatar: '_8',
+                avatar: 'img/avatar_8.jpg',
                 visible: true,
                 messages: [
                     {
@@ -166,6 +169,39 @@ new Vue({
         ]
     },
     methods: {
-        
+        selectedContact(index){
+            this.contactOver = index;
+        },
+        sendMexBar(){
+            if(this.mexBar.trim()) {
+                let createObjMex = {
+                    date: 'oggi',
+                    message: this.mexBar.trim(),
+                    status: 'sent',
+                }
+                this.contacts[this.contactOver].messages.push(createObjMex);
+                this.mexBar = '';
+
+                setTimeout(this.sendCpuMex, 1000);
+            }
+        },
+        sendCpuMex(){
+            let createObjMex = {
+                date: 'oggi',
+                message: 'Okey!',
+                status: 'received',
+            }
+            this.contacts[this.contactOver].messages.push(createObjMex);
+        },
+        searchContact(){
+            for(let i = 0; i < this.contacts.length; i++){
+                if(this.contacts[i].name.toLowerCase().includes(this.seachPeople.toLowerCase())){
+                    this.contacts[i].visible  = true;
+                }
+                else{
+                    this.contacts[i].visible  = false;
+                }
+            }
+        },
     },
 }); 
