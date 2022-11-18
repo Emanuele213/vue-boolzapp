@@ -169,9 +169,11 @@ new Vue({
         ]
     },
     methods: {
+        //seleziona i contatti
         selectedContact(index){
             this.contactOver = index;
         },
+        //manda i messaggi 
         sendMexBar(){
             if(this.mexBar.trim()) {
                 let createObjMex = {
@@ -185,6 +187,7 @@ new Vue({
                 setTimeout(this.sendCpuMex, 1000);
             }
         },
+        //invia il messaggio okey!
         sendCpuMex(){
             let createObjMex = {
                 date: 'oggi',
@@ -193,6 +196,7 @@ new Vue({
             }
             this.contacts[this.contactOver].messages.push(createObjMex);
         },
+        //trova il contatto
         searchContact(){
             for(let i = 0; i < this.contacts.length; i++){
                 if(this.contacts[i].name.toLowerCase().includes(this.seachPeople.toLowerCase())){

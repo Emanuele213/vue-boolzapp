@@ -155,9 +155,12 @@ i:hover {
     display: flex;
 }
 
+.flex-data {
+    display: flex;
+}
+
 .flex-contact {
     display: flex;
-    gap: 4rem;
 }
 
 .time-message {
