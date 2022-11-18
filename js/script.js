@@ -177,7 +177,7 @@ new Vue({
         sendMexBar(){
             if(this.mexBar.trim()) {
                 let createObjMex = {
-                    date: 'oggi alle' + this.getNow(),
+                    date: 'oggi alle ' + this.getNow() ,
                     message: this.mexBar.trim(),
                     status: 'sent',
                 }
@@ -189,7 +189,7 @@ new Vue({
         //invia il messaggio okey!
         sendCpuMex(){
             let createObjMex = {
-                date: 'oggi alle' + this.getNow(),
+                date: 'oggi alle ' + this.getNow(),
                 message: 'Okey!',
                 status: 'received',
             }
