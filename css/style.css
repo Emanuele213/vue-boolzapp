@@ -202,6 +202,11 @@ i:hover {
     margin: .2rem;
 }
 
+.time-message-bar {
+    font-size: .8rem;
+    color: gray;
+}
+
 .messageSent{
     border-radius: 1rem;
     padding: .8rem 1rem;

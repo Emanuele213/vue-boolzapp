@@ -177,20 +177,19 @@ new Vue({
         sendMexBar(){
             if(this.mexBar.trim()) {
                 let createObjMex = {
-                    date: 'oggi',
+                    date: 'oggi alle' + this.getNow(),
                     message: this.mexBar.trim(),
                     status: 'sent',
                 }
                 this.contacts[this.contactOver].messages.push(createObjMex);
                 this.mexBar = '';
-
                 setTimeout(this.sendCpuMex, 1000);
             }
         },
         //invia il messaggio okey!
         sendCpuMex(){
             let createObjMex = {
-                date: 'oggi',
+                date: 'oggi alle' + this.getNow(),
                 message: 'Okey!',
                 status: 'received',
             }
@@ -207,5 +206,10 @@ new Vue({
                 }
             }
         },
+        // nuova ora
+        getNow() {
+			return luxon.DateTime.now().toFormat('HH:mm');
+		}
+
     },
 });
