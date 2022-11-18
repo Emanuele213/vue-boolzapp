@@ -69,20 +69,22 @@
             </div>
             <!-- chat bar -->
             <div class="header-message-bar">
-                <li class="user-profile">
-                    <div class="img-container-profile ">
-                        <img :src="contacts[contactOver].avatar" :alt="contacts[contactOver].name" class="img-profile">
-                        <div class="name-profile">
-                            <div>{{ contacts[contactOver].name }}</div>
-                            <div>Ultimo accesso oggi alle {{ contacts[contactOver].messages[contacts[contactOver].messages.length - 1].date }}</div>
+                <ul>
+                    <li class="user-profile">
+                        <div class="img-container-profile ">
+                            <img :src="contacts[contactOver].avatar" :alt="contacts[contactOver].name" class="img-profile">
+                            <div class="name-profile">
+                                <div>{{ contacts[contactOver].name }}</div>
+                                <div>Ultimo accesso oggi alle {{ contacts[contactOver].messages[contacts[contactOver].messages.length - 1].date }}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="user-controls">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </li>
+                        <div class="user-controls">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </li>
+                </ul>
                 <div class="main-message-bar">
                     <div v-for="mex in contacts[contactOver].messages">
                         <ul :class="{messageSent: mex.status === 'sent', messageArrived: mex.status === 'received'}">
