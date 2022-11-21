@@ -86,12 +86,17 @@
                     </li>
                 </ul>
                 <div class="main-message-bar">
-                    <div v-for="mex in contacts[contactOver].messages">
-                        <ul :class="{messageSent: mex.status === 'sent', messageArrived: mex.status === 'received'}">
+                    <div v-for="(mex, i) in contacts[contactOver].messages">
+                        <ul :class="{messageSent: mex.status === 'sent', messageArrived: mex.status === 'received'}" >
                             <li 
                             class="auto-mex">
                             {{ mex.message }}
-                            <span><i class="fa-solid fa-check check-over"></i></span>
+                            <span><i class="fa-solid fa-check check-over" @click="openMenu = !openMenu"></i></span>
+                            <ul class="option-message" v-show="openMenu" v-show="!openMenu">
+                                <li class="info-message">Info messaggio</li>
+                                <li class="space-message"></li>
+                                <li class="delete-message" @click="removeMex(i)">Cancella messaggio</li>
+                            </ul>
                             <div class="time-message-bar">{{ mex.date }}</div>
                             </li>
                         </ul>

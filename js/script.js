@@ -4,6 +4,7 @@ new Vue({
         contactOver: 0,
         mexBar: '',
         seachPeople: '',
+        openMenu: false,
         contacts: [
             {
                 name: 'Michele',
@@ -209,7 +210,10 @@ new Vue({
         // nuova ora
         getNow() {
 			return luxon.DateTime.now().toFormat('HH:mm');
-		}
-
+		},
+        // cancella messaggio 
+        removeMex (index) {
+            this.contacts[this.contactOver].messages.splice(index, 1);
+        },
     },
 });
