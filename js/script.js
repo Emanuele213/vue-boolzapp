@@ -4,7 +4,7 @@ new Vue({
         contactOver: 0,
         mexBar: '',
         seachPeople: '',
-        openMenu: false,
+        menuDown: -1,
         contacts: [
             {
                 name: 'Michele',
@@ -173,6 +173,7 @@ new Vue({
         //seleziona i contatti
         selectedContact(index){
             this.contactOver = index;
+            this.menuDown = -1;
         },
         //manda i messaggi 
         sendMexBar(){
@@ -215,5 +216,12 @@ new Vue({
         removeMex (index) {
             this.contacts[this.contactOver].messages.splice(index, 1);
         },
+        toggleMenuDown(index) {
+            if(this.menuDown == index ){
+                this.menuDown = -1;
+            }else {
+                this.menuDown = index; 
+            }
+        }
     },
 });

@@ -7,11 +7,16 @@
     <title>Boolzap</title>
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
     <!-- my-style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="main-background-container" id="app">
+    <div class="main-background-container" id="app" v-cloak>
         <!-- colore di sfondo verde -->
         <div class="background-green"></div>
         <!-- colore di sfondo griggio chiaro -->
@@ -91,8 +96,8 @@
                             <li 
                             class="auto-mex">
                             {{ mex.message }}
-                            <span><i class="fa-solid fa-check check-over" @click="openMenu = !openMenu"></i></span>
-                            <ul class="option-message" v-show="openMenu" v-show="!openMenu">
+                            <span><i class="fa-solid fa-check check-over" @click="toggleMenuDown(i)"></i></span>
+                            <ul class="option-message" v-if="menuDown === i" @click="toggleMenuDown(i)">
                                 <li class="info-message">Info messaggio</li>
                                 <li class="space-message"></li>
                                 <li class="delete-message" @click="removeMex(i)">Cancella messaggio</li>
